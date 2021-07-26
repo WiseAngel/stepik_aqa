@@ -1,0 +1,4 @@
+selenium_env
+geckodriver.log
+__pycache__
+.pytest_cache
