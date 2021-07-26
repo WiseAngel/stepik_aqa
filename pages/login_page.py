@@ -32,4 +32,4 @@ class LoginPage(BasePage):
         # assert self.browser.find_element(*LPL.REGISTATION_FORM).is_displayed(), 'Область формы реги не найдена'
         # assert WW(self.browser, 2).until(EC.element_to_be_clickable([*LPL.REGISTATION_EMAIL])).is_displayed(), 'Поле Рег.Емайл не найдено'
         # assert WW(self.browser, 2).until(EC.element_to_be_clickable([*LPL.REGISTATION_PASSWORD])).is_displayed(), 'Поле Рег.Пасс1 не найдено'
-        # assert (WW(self.browser, 2, 0.5, ignored_exceptions = TimeoutException).until(EC.element_to_be_clickable([*LPL.REGISTATION_PASSWORD_CONFIRM])).is_displayed()), 'Поле Рег.Пасс2 не найдено'
+        # assert WW(self.browser, 2).until(EC.element_to_be_clickable([*LPL.REGISTATION_PASSWORD_CONFIRM])), 'Поле Рег.Пасс2 не найдено'
