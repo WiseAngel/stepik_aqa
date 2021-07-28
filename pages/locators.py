@@ -19,4 +19,23 @@ class LoginPageLocators():
     REGISTATION_PASSWORD_CONFIRM = (By.CSS_SELECTOR, "#id_registration-password2")
     BTN_REGISTRATION = (By.CSS_SELECTOR, "#register_form > button")
 
+
+class ProductPageLocators():
+
+    PRICE = (By.CSS_SELECTOR, '.product_main .price_color')
+    BOOK_TITLE = (By.CSS_SELECTOR, '.product_main > h1')
+    BTN_ADD_TO_BASKET = (By.CSS_SELECTOR, '.btn-add-to-basket')
+    MESSAGE_WITH_BOOK_TITLE = (By.CSS_SELECTOR, '#messages > div:nth-child(1) > div > strong')
+    MESSAGE_WITH_PRICE = (By.CSS_SELECTOR, '#messages > div.alert.alert-safe.alert-noicon.alert-info.fade.in > div > p:nth-child(1) > strong')
+
     
+
+    
+    
+    
+    
+    
+    
+    
+    
+
