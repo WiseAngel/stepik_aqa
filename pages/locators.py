@@ -22,6 +22,7 @@ class LoginPageLocators():
 
 class ProductPageLocators():
 
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, '.alert .alertinner')
     PRICE = (By.CSS_SELECTOR, '.product_main .price_color')
     BOOK_TITLE = (By.CSS_SELECTOR, '.product_main > h1')
     BTN_ADD_TO_BASKET = (By.CSS_SELECTOR, '.btn-add-to-basket')

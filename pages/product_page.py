@@ -36,3 +36,11 @@ class ProductPage(BasePage):
 
         self.сost_book_in_basket = self.browser.find_element(*PPL.MESSAGE_WITH_PRICE).text
         assert self.book_price == self.сost_book_in_basket, f'Стоимость выбранной книги {self.book_price}, стоимость книги в корзине {self.сost_book_in_basket}'
+
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*PPL.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+
+
+    def success_message_is_disappeared (self):
+        assert self.is_disappeared(*PPL.SUCCESS_MESSAGE), "Success message is disappeared"
