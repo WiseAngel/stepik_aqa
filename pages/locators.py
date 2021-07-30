@@ -5,6 +5,8 @@ class BasePageLocators():
 
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     BASKET_LINK = (By.CSS_SELECTOR, ".basket-mini a")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+    LOGOUT_LINK = (By.CSS_SELECTOR, '#logout_link ')
 
 
 class BasketPageLocators:
@@ -29,6 +31,9 @@ class LoginPageLocators():
     REGISTATION_PASSWORD_CONFIRM = (
         By.CSS_SELECTOR, "#id_registration-password2")
     BTN_REGISTRATION = (By.CSS_SELECTOR, "#register_form > button")
+
+    SUCCESSFUL_REGISTRATION_MESSAGE = (By.CSS_SELECTOR, '.alert .alertinner.wicon')
+
 
 
 class ProductPageLocators():

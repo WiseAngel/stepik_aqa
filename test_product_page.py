@@ -1,4 +1,5 @@
 import pytest
+import time 
 
 from pages.basket_page import BasketPage
 from pages.login_page import LoginPage
@@ -11,7 +12,7 @@ links = [
 
 # @pytest.mark.skip(reason="no way of currently testing this")
 @pytest.mark.parametrize('link', links)
-class TestProductPage():
+class TestGuestAddToBasketFromProductPage():
 
     def _init_(self, browser, link: str):
         product_page = ProductPage(browser, link)
@@ -58,9 +59,34 @@ class TestProductPage():
         login_page = LoginPage(browser, browser.current_url)
         login_page.should_be_login_page()
 
-
     def test_guest_cant_see_product_in_basket_opened_from_product_page(self, browser, link: str):
         page = BasketPage(browser, link)
         page.open()
         page.go_to_basket()
         page.basket_should_be_empty()
+@pytest.mark.user_add_to_cart
+@pytest.mark.parametrize('link', links)
+class TestUserAddToBasketFromProductPage():
+
+    @pytest.fixture(scope="function", autouse=True)
+    def setup(self, browser):
+        link = 'http://selenium1py.pythonanywhere.com/ru/accounts/login/'
+        page = LoginPage(browser, link)
+        page.open()
+        template = str(int(time.time()))
+        email = f'{template}@{template}.com'
+        password = f'Qq{template}wW'
+        page.register_new_user(email, password)
+        page.should_be_authorized_user()
+        page.should_be_successful_registration()
+
+    def test_user_cant_see_success_message(self, browser, link: str):
+        product_page = ProductPage(browser, link)
+        product_page.open()
+        product_page.should_not_be_success_message()
+
+    def test_user_can_add_product_to_basket(self, browser, link: str):
+        product_page = ProductPage(browser, link)
+        product_page.open()
+        product_page.add_to_cart()
+        product_page.check_added_book()
