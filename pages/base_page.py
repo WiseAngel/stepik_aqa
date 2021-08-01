@@ -1,4 +1,3 @@
-# from selenium.common.exceptions import NoSuchElementException
 import math
 
 from selenium.common.exceptions import (NoAlertPresentException,
